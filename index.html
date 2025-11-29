@@ -736,6 +736,15 @@ h1 {
       { title: "F Wonderful World", spotifyId: "4P7FrPgQqjM6OVCbr0QMEn" },
       { title: "イート・スリープ・エスケープ", spotifyId: "4lyQPShOCd69eyLh56S6HW" }
     ];
+    // Shuffle the array so song order is different each session
+    shuffle(songs);
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
 
     // 🔧 sorter state
     let sorted = [];
