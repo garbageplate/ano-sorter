@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>あのちゃん楽曲ソート（Spotify版）</title>
+  <title>anoソート</title>
   <style>
   :root {
     --ano-blue: #add8e6;         /* main ano water-blue */
@@ -31,7 +31,7 @@
     color: var(--ano-deep);
     position: relative;
     z-index: 1;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
@@ -499,7 +499,7 @@ h1 {
 
   @media (max-width: 600px) {
   body {
-    padding: 80px 10px 24px;
+    padding: 60px 10px 24px;
     background-image: url("ano_background_mobile.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -870,7 +870,7 @@ h1 {
       compareIndex = 0;
       resultsEl.style.display = "none";
       choiceContainer.style.display = "flex";
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflowY = "auto";
       statusEl.textContent = "";
       statusEl.style.display = "none";
       nextStep();
@@ -990,7 +990,7 @@ h1 {
     return text;
   }
 
-  const sorterUrl = "https://example.com/ano-sorter"; // TODO: replace with your published URL
+  const sorterUrl = "https://garbageplate.github.io/ano-sorter/"; // TODO: replace with your published URL
   const tweetBtn = document.getElementById("tweet-top5");
   tweetBtn.addEventListener("click", () => {
     const text = encodeURIComponent(buildTweetText());
