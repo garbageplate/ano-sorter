@@ -1059,16 +1059,16 @@ h1 {
     // ✅ Title (50% larger)
     ctx.font =
       "700 129px -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', system-ui, sans-serif";
-    ctx.fillText("My ano TOP5", 120, 180);
+    ctx.fillText("My ano TOP5", 80, 150);
 
     // ✅ Top 5 list (50% larger, aligned by title)
     ctx.font =
       "500 75px -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', system-ui, sans-serif";
 
-    const startY = 370;       // first line
-    const lineHeight = 82;    // spacing between lines
-    const numberX = 140;      // where "1." "2." etc go
-    const titleX  = 260;      // where song titles start (aligned column)
+    const startY = 330;       // first line
+    const lineHeight = 70;    // spacing between lines
+    const numberX = 100;      // where "1." "2." etc go
+    const titleX  = 210;      // where song titles start (aligned column)
 
     top5.forEach((title, i) => {
       const y = startY + i * lineHeight;
