@@ -1047,8 +1047,16 @@ h1 {
 
         ctx.drawImage(img, dx, dy, drawW, drawH);
       } else {
-        // Preset backgrounds: simple full draw
-        ctx.drawImage(img, 0, 0, width, height);
+        // Preset backgrounds: preserve aspect ratio and FILL the entire canvas (cover-style)
+        // Enlarge proportionally until the canvas is covered; no stretching, but sides/top may crop.
+        const imgW = img.width;
+        const imgH = img.height;
+        const baseScale = Math.max(width / imgW, height / imgH);
+        const drawW = imgW * baseScale;
+        const drawH = imgH * baseScale;
+        const dx = (width - drawW) / 2;
+        const dy = (height - drawH) / 2;
+        ctx.drawImage(img, dx, dy, drawW, drawH);
       }
 
       // Draw text: title + Top5 list
